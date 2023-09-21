@@ -172,8 +172,8 @@ const Topic = () => {
                   {sentenceTable?.map((sentence, idx) => (
                     <tr key={sentence.join("")} className={styles.grammarRow}>
                       {idx == 0
-                        ? sentence.map((sent) => <th>{sent}</th>)
-                        : sentence.map((sent) => <td>{sent}</td>)}
+                        ? sentence.map((sent) => <th key={sent}>{sent}</th>)
+                        : sentence.map((sent) => <td key={sent}>{sent}</td>)}
                     </tr>
                   ))}
                 </table>
