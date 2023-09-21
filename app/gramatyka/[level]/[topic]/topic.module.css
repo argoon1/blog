@@ -27,3 +27,13 @@
   font-size: 1.4rem;
   font-weight: bold;
 }
+.grammarRule {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.grammarRow {
+  width: 90%;
+  margin: 0.3rem auto 0 auto;
+  border-bottom: 10.4px black;
+}

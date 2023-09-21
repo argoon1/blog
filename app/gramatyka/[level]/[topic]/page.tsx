@@ -87,6 +87,49 @@ const grammar = {
           ],
         },
       ],
+      creation: {
+        //zdania w całości
+        grammarStructure: [
+          {
+            title: "twierdzace",
+            sentenceSchema: "Podmiot + czasownik + reszta zdania",
+            sentenceTable: [
+              ["podmiot", "czasownik"],
+              ["I", "drink"],
+              ["you", "drink"],
+              ["he/she/it", "drinks"],
+              ["we", "drink"],
+              ["they", "drink"],
+            ],
+          },
+          {
+            title: "przeczące",
+            sentenceSchema: "Podmiot +don't/doesn't+ czasownik+ reszta zdania",
+            sentenceTable: [
+              ["podmiot", "don't/do not", "czasownik"],
+              ["I", "don't/do not", "drink"],
+              ["you", "don't/do not", "drink"],
+              ["he/she/it", "doesn't does not", "drinks"],
+              ["we", "don't/do not", "drink"],
+              ["they", "don't/do not", "drink"],
+            ],
+          },
+          {
+            title: "pytające",
+            sentenceSchema: "Do/Does +podmiot + czasownik+ reszta zdania",
+            sentenceTable: [
+              ["Do/does", "podmiot", "czasownik"],
+              ["Do", "I", "drink"],
+              ["Do", "you", "drink"],
+              ["Does", "he/she/it", "drinks"],
+              ["Do", "we", "drink"],
+              ["Do", "they", "drink"],
+            ],
+          },
+        ],
+
+        //odmiana czasownika
+      },
       image: "optional",
     },
     cwiczenia: "cwiczob",
@@ -117,22 +160,43 @@ const Topic = () => {
       <h1>{grammarTopic}</h1>
       <Link href={getLink()}>{getSecondTopicLink()}</Link>
       {showTopic === "nauka" ? (
-        <ol className={styles.list}>
-          {grammar[grammarTopic][showTopic]["use"].map(
-            ({ explanation, examples }) => (
-              <li className={styles.rule} key={explanation}>
-                <h2 className={styles.expHeader}>{explanation}</h2>
-                <ul className={styles.listInner}>
-                  {examples.map(({ eng, pl }) => (
-                    <li key={eng}>
-                      {eng} ({pl})
-                    </li>
+        <>
+          <ol className={styles.list}>
+            {grammar[grammarTopic][showTopic]["creation"][
+              "grammarStructure"
+            ].map(({ title, sentenceSchema, sentenceTable }) => (
+              <li className={styles.rule} key={title}>
+                <h2 className={styles.expHeader}>{title}</h2>
+                <p>{sentenceSchema}</p>
+                <table className={styles.grammarRule}>
+                  {sentenceTable?.map((sentence, idx) => (
+                    <tr key={sentence.join("")} className={styles.grammarRow}>
+                      {idx == 0
+                        ? sentence.map((sent) => <th>{sent}</th>)
+                        : sentence.map((sent) => <td>{sent}</td>)}
+                    </tr>
                   ))}
-                </ul>
+                </table>
               </li>
-            )
-          )}
-        </ol>
+            ))}
+          </ol>
+          <ol className={styles.list}>
+            {grammar[grammarTopic][showTopic]["use"].map(
+              ({ explanation, examples }) => (
+                <li className={styles.rule} key={explanation}>
+                  <h2 className={styles.expHeader}>{explanation}</h2>
+                  <ul className={styles.listInner}>
+                    {examples.map(({ eng, pl }) => (
+                      <li key={eng}>
+                        {eng} ({pl})
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              )
+            )}
+          </ol>
+        </>
       ) : (
         "cwiczenia"
       )}
