@@ -1,6 +1,6 @@
 import styles from "./gramatyka.module.css";
 import Link from "next/link";
-const page = () => {
+const Grammar = () => {
   const grammarLevels = ["A1", "A2", "B1", "B2"];
   return (
     <article className={styles.levelsContainer}>
@@ -11,4 +11,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Grammar;

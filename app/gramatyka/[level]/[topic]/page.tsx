@@ -93,7 +93,7 @@ const grammar = {
   },
 };
 
-const page = () => {
+const Topic = () => {
   const curPath = usePathname();
   const topicInfo = usePathname().split("/");
   const topicInfoDetails = topicInfo[topicInfo.length - 1].split("-");
@@ -140,7 +140,7 @@ const page = () => {
   );
 };
 
-export default page;
+export default Topic;
 
 /*
 Fill the gap (just ending)   He work[] in a shop

@@ -6,7 +6,7 @@ type Props = {
   };
 };
 const topics = ["present simple", "present continous"];
-const page = ({ params: { level } }: Props) => {
+const Level = ({ params: { level } }: Props) => {
   function getPracticieLink(topic: string) {
     return `/gramatyka/A1/${topic
       .split("")
@@ -39,4 +39,4 @@ const page = ({ params: { level } }: Props) => {
   );
 };
 
-export default page;
+export default Level;
