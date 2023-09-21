@@ -5,7 +5,11 @@ const Grammar = () => {
   return (
     <article className={styles.levelsContainer}>
       {grammarLevels.map((level) => {
-        return <Link href={`/gramatyka/${level}`}>{level}</Link>;
+        return (
+          <Link href={`/gramatyka/${level}`} key={level}>
+            {level}
+          </Link>
+        );
       })}
     </article>
   );

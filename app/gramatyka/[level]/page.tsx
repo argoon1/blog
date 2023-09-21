@@ -16,7 +16,7 @@ const Level = ({ params: { level } }: Props) => {
   return (
     <div className={styles.topicsContainer}>
       {topics.map((topic) => (
-        <section className={styles.topicContainer}>
+        <section className={styles.topicContainer} key={topic}>
           {topic}
           <div className={styles.topicLinksContainer}>
             <Link
