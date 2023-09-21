@@ -1,0 +1,14 @@
+import styles from "./gramatyka.module.css";
+import Link from "next/link";
+const page = () => {
+  const grammarLevels = ["A1", "A2", "B1", "B2"];
+  return (
+    <article className={styles.levelsContainer}>
+      {grammarLevels.map((level) => {
+        return <Link href={`/gramatyka/${level}`}>{level}</Link>;
+      })}
+    </article>
+  );
+};
+
+export default page;

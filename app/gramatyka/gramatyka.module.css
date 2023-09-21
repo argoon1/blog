@@ -1,0 +1,35 @@
+.levelsContainer {
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  column-gap: 4rem;
+  flex-wrap: wrap;
+  row-gap: 4rem;
+  margin-top: 3rem;
+  justify-content: space-evenly;
+}
+
+.level {
+  text-align: center;
+  font-size: 3rem;
+  width: 250px;
+  height: 250px;
+  border: 2px rgb(153, 153, 153) solid;
+  font-weight: bold;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 0, 230, 0.3);
+  font-weight: bold;
+  border-radius: 8px;
+}
+.level:hover {
+  background: rgb(255, 0, 230, 0.6);
+  border: 4px black solid;
+  border-radius: 24px;
+  border-top-right-radius: 40px;
+  transform: scale(1.05);
+  font-size: 3.5rem;
+  color: black;
+}

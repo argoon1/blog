@@ -1,0 +1,29 @@
+.practiceLink {
+  background-color: red;
+}
+.list {
+  display: flex;
+  row-gap: 3rem;
+  flex-wrap: wrap;
+  column-gap: 3rem;
+  justify-content: flex-start;
+}
+.listInner {
+  list-style-type: square;
+  list-style-position: inside;
+}
+.listInner li {
+}
+.rule {
+  margin: 0 auto;
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  padding: 1.3rem;
+}
+.expHeader {
+  text-align: center;
+  display: block;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
